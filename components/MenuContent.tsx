@@ -219,11 +219,11 @@ export function MenuContent() {
   );
 
   return (
-    <div className="bg-cream min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* =========================================================================
           PAGE HEADER
          ========================================================================= */}
-      <section className="relative z-10 bg-cream/80 border-b border-gold/25 py-10 sm:py-14 text-center px-4 sm:px-6">
+      <section className="relative z-10 bg-transparent border-b border-gold/25 py-10 sm:py-14 text-center px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <p className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold mb-2">
             House of 666 Culinary Panorama

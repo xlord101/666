@@ -49,11 +49,11 @@ const valuePillars = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="min-h-screen">
       {/* =========================================================================
           HERO HEADER
          ========================================================================= */}
-      <section className="bg-cream border-b border-gold/25 py-14 sm:py-20 text-center px-4 sm:px-6 relative overflow-hidden">
+      <section className="bg-transparent border-b border-gold/25 py-14 sm:py-20 text-center px-4 sm:px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="font-heading uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold text-gold mb-3">
             Born in Tarabai Park, Kolhapur
@@ -78,7 +78,7 @@ export default function AboutPage() {
       {/* =========================================================================
           4-ICON VALUE GRID
          ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-cream/70 border-t border-gold/25">
+      <section className="py-16 sm:py-24 border-t border-gold/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold mb-2">

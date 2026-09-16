@@ -158,7 +158,7 @@ export default function HomePage() {
           HERO SECTION
           Full-bleed cream/ink, faint mirrored swaying palm trees, Anton typography
          ========================================================================= */}
-      <section className="relative overflow-hidden bg-cream pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-24 lg:pb-28 border-b border-gold/25">
+      <section className="relative overflow-hidden bg-transparent pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-24 lg:pb-28 border-b border-gold/25">
         {/* Subtle background gradient and patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
 
@@ -256,19 +256,19 @@ export default function HomePage() {
 
           {/* Quick Micro-Highlight */}
           <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-6 lg:gap-10 text-[11px] sm:text-sm text-husk/80 font-medium">
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/80 border border-gold/25 sm:border-none sm:bg-transparent">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
               Authentic Kolhapuri Recipes
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/80 border border-gold/25 sm:border-none sm:bg-transparent">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
               Smoky Tandoor &amp; Kebabs
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/80 border border-gold/25 sm:border-none sm:bg-transparent">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
               Chilled Specialty Coffees
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/80 border border-gold/25 sm:border-none sm:bg-transparent">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
               Handmade Cheesecakes
             </span>
@@ -295,14 +295,15 @@ export default function HomePage() {
         </div>
 
         {/* TWO GRAND EXPERIENCE CARDS: RESTRO VS CAFE */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 relative z-10">
           {/* Card 1: The Royal Restro */}
           <Link
             href="/menu?hub=restro&tab=royal-delight"
-            className="group relative p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#B98B3E]/15 via-cream to-[#7A5A22]/10 border-2 border-gold/50 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+            className="group relative p-8 sm:p-10 rounded-3xl bg-cream border-2 border-gold/50 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
           >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#B98B3E]/20 via-transparent to-[#7A5A22]/15 pointer-events-none" />
             <div className="absolute top-0 right-0 w-36 h-36 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
-            <div>
+            <div className="relative z-10">
               <div className="flex items-center justify-between mb-5">
                 <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center text-gold border border-gold/40 shadow-sm group-hover:scale-110 transition-transform">
                   <Crown className="w-7 h-7 text-gold" />
@@ -318,7 +319,7 @@ export default function HomePage() {
                 Charcoal-roasted tandoor kebabs, slow-cooked authentic Kolhapuri mutton gravies, aromatic dum biryanis, and piping-hot butter naans for unforgettable dining.
               </p>
             </div>
-            <div className="pt-6 mt-6 border-t border-gold/30 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-gold">
+            <div className="relative z-10 pt-6 mt-6 border-t border-gold/30 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-gold">
               <span>Explore Resto Dining Menu</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
@@ -327,10 +328,11 @@ export default function HomePage() {
           {/* Card 2: The Artisan Cafe */}
           <Link
             href="/menu?hub=cafe&tab=food"
-            className="group relative p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#AEDCEF]/20 via-cream to-[#7FD8C8]/15 border-2 border-[#2A657D]/30 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+            className="group relative p-8 sm:p-10 rounded-3xl bg-cream border-2 border-[#2A657D]/30 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
           >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#AEDCEF]/25 via-transparent to-[#7FD8C8]/20 pointer-events-none" />
             <div className="absolute top-0 right-0 w-36 h-36 bg-[#AEDCEF]/20 rounded-full blur-2xl pointer-events-none" />
-            <div>
+            <div className="relative z-10">
               <div className="flex items-center justify-between mb-5">
                 <div className="w-14 h-14 rounded-2xl bg-[#AEDCEF]/30 flex items-center justify-center text-[#2A657D] border border-[#AEDCEF]/60 shadow-sm group-hover:scale-110 transition-transform">
                   <Coffee className="w-7 h-7 text-[#2A657D]" />
@@ -346,7 +348,7 @@ export default function HomePage() {
                 Freshly pulled espresso brews, chilled caramel lattes, thick Biscoff shakes, coastal seafood bites, crispy cigar rolls, and decadent handmade cheesecakes.
               </p>
             </div>
-            <div className="pt-6 mt-6 border-t border-[#2A657D]/20 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2A657D]">
+            <div className="relative z-10 pt-6 mt-6 border-t border-[#2A657D]/20 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2A657D]">
               <span>Explore Cafe &amp; Brews Menu</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
@@ -354,18 +356,19 @@ export default function HomePage() {
         </div>
 
         {/* 6 Quick Category Tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           {categoryTiles.map((tile) => {
             const Icon = tile.icon;
             return (
               <Link
                 key={tile.slug}
                 href={`/menu?hub=${tile.hub}&tab=${tile.slug}`}
-                className={`group relative p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover flex flex-col justify-between ${tile.bgClass}`}
+                className="group relative p-6 sm:p-8 rounded-2xl border border-gold/30 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover flex flex-col justify-between bg-cream overflow-hidden shadow-card"
               >
-                <div>
+                <div className={`absolute inset-0 pointer-events-none transition-colors ${tile.bgClass}`} />
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-cream/90 flex items-center justify-center shadow-sm text-ink group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-cream flex items-center justify-center shadow-sm text-ink group-hover:scale-110 transition-transform duration-300 border border-gold/20">
                       <Icon className="w-6 h-6 text-gold" />
                     </div>
                     <span
@@ -383,7 +386,7 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-ink/10 flex items-center justify-between text-xs font-semibold tracking-wide uppercase">
+                <div className="relative z-10 pt-6 mt-4 border-t border-ink/10 flex items-center justify-between text-xs font-semibold tracking-wide uppercase">
                   <span className={tile.textClass}>View Category Items</span>
                   <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
@@ -397,7 +400,7 @@ export default function HomePage() {
           SIGNATURE PICKS CAROUSEL
           Swipeable cards on mobile, arrow controls on desktop
          ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-cream/60 border-y border-gold/20">
+      <section className="py-16 sm:py-24 bg-transparent border-y border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
             <div>

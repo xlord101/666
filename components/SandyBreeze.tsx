@@ -84,7 +84,7 @@ export function SandyBreeze({
         ? Math.max(160, Math.floor(particleCount * 0.55))
         : particleCount;
 
-    // Create a fine sand particle
+    // Create a fine sand particle (favoring side margins where sand blows in bg)
     const createParticle = (spawnType?: "anywhere" | "edge"): Particle => {
       const rand = Math.random();
       const type: Particle["type"] =
@@ -96,26 +96,34 @@ export function SandyBreeze({
       // Fine, distinct, and visible sand granules
       if (type === "dust") {
         radius = Math.random() * 0.45 + 0.85; // 0.85px - 1.3px (crisp micro-grain)
-        baseAlpha = Math.random() * 0.35 + 0.35; // 0.35 - 0.70
+        baseAlpha = Math.random() * 0.3 + 0.35;
       } else if (type === "grain") {
         radius = Math.random() * 0.6 + 1.25;  // 1.25px - 1.85px (classic sand grain)
-        baseAlpha = Math.random() * 0.35 + 0.45; // 0.45 - 0.80
+        baseAlpha = Math.random() * 0.3 + 0.45;
       } else {
         // Shimmering desert crystal glint
         radius = Math.random() * 0.5 + 1.8;   // 1.8px - 2.3px (golden crystal speck)
-        baseAlpha = Math.random() * 0.35 + 0.50; // 0.50 - 0.85
+        baseAlpha = Math.random() * 0.3 + 0.50;
       }
 
-      // Spawn position
+      // Spawn position: favor side margins (left 28% and right 28%) framing the page
       let x: number;
       let y: number;
-      const blowDirection = Math.random() < 0.75 ? 1 : -1;
+      const blowDirection = Math.random() < 0.5 ? 1 : -1;
 
       if (spawnType === "anywhere") {
-        x = Math.random() * displayWidth;
+        const onSide = Math.random() < 0.82;
+        if (onSide) {
+          x =
+            Math.random() < 0.5
+              ? Math.random() * (displayWidth * 0.28)
+              : displayWidth - Math.random() * (displayWidth * 0.28);
+        } else {
+          x = Math.random() * displayWidth;
+        }
         y = Math.random() * displayHeight;
       } else {
-        // Spawn from windward edge
+        // Spawn from windward side edges
         if (blowDirection > 0) {
           x = -15 - Math.random() * 30;
         } else {
@@ -306,10 +314,18 @@ export function SandyBreeze({
             ? p.alpha * (0.8 + twinklePulse * 0.4)
             : p.alpha;
 
-        // DRAW FINE MICRO-GRAIN
+        // Side margin focus: full visibility on the sides (left & right margins)
+        // Gentle clearance in the central content zone so website text & info stay 100% clean
+        const distFromCenter = Math.abs(p.x - displayWidth * 0.5) / (displayWidth * 0.5);
+        const marginFactor = Math.min(1, Math.max(0.04, Math.pow(distFromCenter, 0.7) * 1.5));
+        const finalAlpha = currentAlpha * marginFactor;
+
+        if (finalAlpha <= 0.02) continue;
+
+        // DRAW FINE MICRO-GRAIN IN BACKGROUND
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `${p.color}${Math.min(1, currentAlpha)})`;
+        ctx.fillStyle = `${p.color}${Math.min(1, finalAlpha)})`;
         ctx.fill();
       }
 

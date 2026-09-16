@@ -108,18 +108,21 @@ export default function RootLayout({
       className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
       <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative">
-        {/* Global ambient desert sand grains & tactile grain finish drifting across all pages */}
+        {/* Global ambient desert sand grains & tactile grain finish in the background (z-0) */}
         <SandyBreeze
           particleCount={360}
           intensity="vibrant"
           interactive={true}
-          className="fixed inset-0 pointer-events-none z-20 overflow-hidden"
+          className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
         />
-        <Navbar />
-        {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
-        <main className="flex-1 w-full pb-20 md:pb-0">{children}</main>
-        <Footer />
-        <MobileActionBar />
+        {/* Foreground Content Stack (z-10) so cards and text are strictly in front of background sand */}
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navbar />
+          {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
+          <main className="flex-1 w-full pb-20 md:pb-0">{children}</main>
+          <Footer />
+          <MobileActionBar />
+        </div>
       </body>
     </html>
   );

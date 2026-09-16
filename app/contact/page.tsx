@@ -27,9 +27,9 @@ export default function ContactPage() {
     <>
       <RestaurantJsonLd />
 
-      <div className="bg-cream min-h-screen">
+      <div className="min-h-screen">
         {/* Header */}
-        <section className="bg-cream border-b border-gold/25 py-12 sm:py-16 text-center px-4 sm:px-6">
+        <section className="bg-transparent border-b border-gold/25 py-12 sm:py-16 text-center px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <p className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold mb-2">
               Visit &amp; Connect &bull; Tarabai Park, Kolhapur
