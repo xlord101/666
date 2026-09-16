@@ -221,8 +221,13 @@ export function MenuContent() {
 
   return (
     <div className="bg-cream min-h-screen relative overflow-hidden">
-      {/* Subtle sandy breeze in background */}
-      <SandyBreeze particleCount={30} className="absolute inset-0 pointer-events-none z-0 opacity-40" />
+      {/* Interactive desert sandy breeze in background */}
+      <SandyBreeze
+        particleCount={75}
+        intensity="vibrant"
+        interactive={true}
+        className="absolute inset-0 pointer-events-none z-0 opacity-80"
+      />
 
       {/* =========================================================================
           PAGE HEADER

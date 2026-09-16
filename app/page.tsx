@@ -160,8 +160,13 @@ export default function HomePage() {
           Full-bleed cream/ink, faint mirrored swaying palm trees, Anton typography
          ========================================================================= */}
       <section className="relative overflow-hidden bg-cream pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-24 lg:pb-28 border-b border-gold/25">
-        {/* Desert/Beach ambient sandy breeze drifting gently in the background from sides */}
-        <SandyBreeze particleCount={44} className="absolute inset-0 pointer-events-none z-0 opacity-70" />
+        {/* Desert/Beach ambient sandy breeze drifting gently in the background with interactive aerodynamics & sparkles */}
+        <SandyBreeze
+          particleCount={95}
+          intensity="vibrant"
+          interactive={true}
+          className="absolute inset-0 pointer-events-none z-0 opacity-90"
+        />
 
         {/* Subtle background gradient and patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
@@ -455,6 +460,14 @@ export default function HomePage() {
          ========================================================================= */}
       <section className="py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-cream border border-gold/40 rounded-3xl p-8 sm:p-12 md:p-16 shadow-card relative overflow-hidden">
+          {/* Ambient coastal sand breeze */}
+          <SandyBreeze
+            particleCount={50}
+            intensity="gentle"
+            interactive={true}
+            className="absolute inset-0 pointer-events-none z-0 opacity-60"
+          />
+
           {/* Authentic Gold Corner Palm Tree from Menu Cards */}
           <div className="absolute -right-4 -bottom-6 opacity-30 pointer-events-none">
             <PalmTreeSway variant="right" theme="gold" className="w-36 sm:w-56 h-auto drop-shadow-sm" enableSway={false} />
