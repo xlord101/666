@@ -30,8 +30,8 @@ interface Particle {
 }
 
 export function SandyBreeze({
-  className = "fixed inset-0 pointer-events-none overflow-hidden z-0",
-  particleCount = 210,
+  className = "fixed inset-0 pointer-events-none overflow-hidden z-20",
+  particleCount = 360,
   interactive = true,
   intensity = "vibrant",
   speed = 1.0,
@@ -62,24 +62,26 @@ export function SandyBreeze({
     setupCanvasSize();
     window.addEventListener("resize", setupCanvasSize);
 
-    // Warm desert sand, sunlit dune, and gold shimmer palette
+    // Rich, high-contrast desert sand, warm ochre, amber, and golden dune grains
     const sandPalette = [
       "rgba(185, 139, 62, ",  // Kolhapur Royal Gold
-      "rgba(212, 175, 55, ",  // Warm sunlit gold
-      "rgba(229, 192, 123, ", // Desert sand shimmer
-      "rgba(246, 223, 156, ", // Pale dune light
-      "rgba(202, 160, 82, ",  // Amber grain
-      "rgba(255, 238, 187, ", // Golden highlight
+      "rgba(163, 114, 45, ",  // Warm Desert Ochre
+      "rgba(139, 94, 38, ",   // Sunbaked Dune Bronze
+      "rgba(118, 77, 28, ",   // Deep Earthy Sand Grain
+      "rgba(196, 122, 52, ",  // Warm Terracotta Sand
+      "rgba(212, 160, 23, ",  // Golden Sand Grain
+      "rgba(152, 90, 30, ",   // Spiced Amber Speck
+      "rgba(175, 128, 55, ",  // Dune Horizon Gold
     ];
 
     const intensityMultiplier =
       intensity === "vibrant" ? 1.35 : intensity === "medium" ? 1.15 : 1.0;
     const speedMult = speed * intensityMultiplier;
 
-    // Responsive particle count (slight reduction on tiny screens)
+    // Responsive particle count (plenty of grains across screen)
     const effectiveCount =
       displayWidth < 640
-        ? Math.max(90, Math.floor(particleCount * 0.55))
+        ? Math.max(160, Math.floor(particleCount * 0.55))
         : particleCount;
 
     // Create a fine sand particle
@@ -91,17 +93,17 @@ export function SandyBreeze({
       let radius: number;
       let baseAlpha: number;
 
-      // Ultra-fine micro-dots
+      // Fine, distinct, and visible sand granules
       if (type === "dust") {
-        radius = Math.random() * 0.5 + 0.35; // 0.35px - 0.85px
-        baseAlpha = Math.random() * 0.28 + 0.12;
+        radius = Math.random() * 0.45 + 0.85; // 0.85px - 1.3px (crisp micro-grain)
+        baseAlpha = Math.random() * 0.35 + 0.35; // 0.35 - 0.70
       } else if (type === "grain") {
-        radius = Math.random() * 0.55 + 0.7; // 0.7px - 1.25px
-        baseAlpha = Math.random() * 0.35 + 0.20;
+        radius = Math.random() * 0.6 + 1.25;  // 1.25px - 1.85px (classic sand grain)
+        baseAlpha = Math.random() * 0.35 + 0.45; // 0.45 - 0.80
       } else {
-        // Subtle crystal shimmer speck
-        radius = Math.random() * 0.4 + 1.1; // 1.1px - 1.5px
-        baseAlpha = Math.random() * 0.45 + 0.25;
+        // Shimmering desert crystal glint
+        radius = Math.random() * 0.5 + 1.8;   // 1.8px - 2.3px (golden crystal speck)
+        baseAlpha = Math.random() * 0.35 + 0.50; // 0.50 - 0.85
       }
 
       // Spawn position
@@ -329,7 +331,14 @@ export function SandyBreeze({
 
   return (
     <div className={className} aria-hidden="true">
-      <canvas ref={canvasRef} className="w-full h-full block" />
+      {/* Tactile organic desert sand grain micro-texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.045] mix-blend-multiply"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='sandGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23sandGrain)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      <canvas ref={canvasRef} className="w-full h-full block relative z-10" />
     </div>
   );
 }

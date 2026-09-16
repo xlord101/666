@@ -108,12 +108,12 @@ export default function RootLayout({
       className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
       <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative">
-        {/* Global ambient fine desert sand drifting across all pages */}
+        {/* Global ambient desert sand grains & tactile grain finish drifting across all pages */}
         <SandyBreeze
-          particleCount={220}
+          particleCount={360}
           intensity="vibrant"
           interactive={true}
-          className="fixed inset-0 pointer-events-none z-20 overflow-hidden opacity-80"
+          className="fixed inset-0 pointer-events-none z-20 overflow-hidden"
         />
         <Navbar />
         {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
