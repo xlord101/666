@@ -189,11 +189,12 @@ export function OpeningScreen({
             <video
               ref={videoRef}
               src={videoSrc}
+              poster="/hero-ambient-poster.jpg"
               autoPlay
               muted={isMuted}
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               onCanPlay={() => {
                 setVideoLoaded(true);
                 setVideoError(false);

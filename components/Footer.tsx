@@ -79,7 +79,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="hover:text-gold transition-colors inline-flex items-center gap-1.5">
-                  <span>Reserve a Table</span>
+                  <span>Contact &amp; Directions</span>
                 </Link>
               </li>
               <li>

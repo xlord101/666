@@ -480,21 +480,14 @@ export function FlavourJourneyFlow() {
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto justify-center">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-all duration-200 shadow-gold hover:-translate-y-0.5 active:scale-95"
-            >
-              <UtensilsCrossed className="w-4 h-4" />
-              <span>Reserve Table for This Journey</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-
+          <div className="w-full sm:w-auto flex justify-center">
             <Link
               href="/menu"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-gold/50 text-ink font-semibold text-sm hover:bg-gold/15 transition-colors active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-all duration-200 shadow-gold hover:-translate-y-0.5 active:scale-95"
             >
+              <UtensilsCrossed className="w-4 h-4" />
               <span>Explore Full Menu</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
