@@ -28,7 +28,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="font-display text-2xl tracking-wider text-cream block">
+                <span className="font-brand font-bold text-xl sm:text-2xl tracking-[0.16em] text-cream block uppercase">
                   HOUSE OF <span className="text-gold">666</span>
                 </span>
                 <span className="font-heading uppercase tracking-[0.25em] text-[10px] text-cream/70 block">

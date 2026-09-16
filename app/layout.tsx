@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Cormorant_Garamond, Jost, Caveat } from "next/font/google";
+import { Anton, Cormorant_Garamond, Jost, Caveat, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -10,6 +10,13 @@ const anton = Anton({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-anton",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -103,7 +110,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
+      className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
       <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream">
         <Navbar />

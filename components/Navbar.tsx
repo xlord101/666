@@ -62,7 +62,7 @@ export function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-display text-xl sm:text-2xl text-ink tracking-wider leading-none">
+            <span className="font-brand font-extrabold text-lg sm:text-xl text-ink tracking-[0.14em] leading-none">
               HOUSE OF <span className="text-gold">666</span>
             </span>
             <span className="font-heading uppercase tracking-[0.2em] text-[10px] sm:text-xs text-husk font-medium">

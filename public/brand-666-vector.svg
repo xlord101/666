@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 752 489" width="752" height="489">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C07B"/>
+      <stop offset="30%" stop-color="#B98B3E"/>
+      <stop offset="70%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#7A5A22"/>
+    </linearGradient>
+  </defs>
+
+    <path fill="url(#goldGrad)" fill-rule="evenodd" d="
+      M 0 0
+      L 234 0
+      L 234 260
+      L 130 206
+      L 130 78
+      L 106 78
+      L 106 218
+      L 234 284
+      L 234 489
+      L 0 489
+      Z
+      M 103 292
+      L 127 304
+      L 127 442
+      L 103 442
+      Z
+    " />
+    
+    <path fill="url(#goldGrad)" fill-rule="evenodd" d="
+      M 259 0
+      L 493 0
+      L 493 260
+      L 389 206
+      L 389 78
+      L 365 78
+      L 365 218
+      L 493 284
+      L 493 489
+      L 259 489
+      Z
+      M 362 292
+      L 386 304
+      L 386 442
+      L 362 442
+      Z
+    " />
+    
+    <path fill="url(#goldGrad)" fill-rule="evenodd" d="
+      M 518 0
+      L 752 0
+      L 752 260
+      L 648 206
+      L 648 78
+      L 624 78
+      L 624 218
+      L 752 284
+      L 752 489
+      L 518 489
+      Z
+      M 621 292
+      L 645 304
+      L 645 442
+      L 621 442
+      Z
+    " />
+    </svg>

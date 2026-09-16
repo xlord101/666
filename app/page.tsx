@@ -25,18 +25,43 @@ import { SignatureCarousel } from "@/components/SignatureCarousel";
 import { FlavourJourneyFlow } from "@/components/FlavourJourneyFlow";
 import { OpeningScreen } from "@/components/OpeningScreen";
 import { ReplayIntroButton } from "@/components/ReplayIntroButton";
+import { HouseOf666Heading } from "@/components/HouseOf666Heading";
+import { SandyBreeze } from "@/components/SandyBreeze";
 
 export const metadata: Metadata = {
   title: "House of 666 — Resto & Cafe | Tarabai Park, Kolhapur",
   description: siteConfig.description,
 };
 
-// 6 Category Tiles configuration matching design tokens
+// 6 Category Tiles configuration putting Resto Dining first
 const categoryTiles = [
   {
-    title: "Brew",
+    title: "Royal Resto Dining",
+    subtitle: "Kebabs, Tandoor, Curries & Biryanis",
+    slug: "royal-delight",
+    hub: "restro",
+    icon: Crown,
+    bgClass: "bg-[#B98B3E]/15 hover:bg-[#B98B3E]/25 border-[#B98B3E]/50",
+    textClass: "text-[#7A5A22]",
+    badgeClass: "bg-gold text-cream",
+    badge: "Resto Feasts",
+  },
+  {
+    title: "Food & Cafe Bites",
+    subtitle: "Bruschetta, Cigar Rolls & Seafood",
+    slug: "food",
+    hub: "cafe",
+    icon: Utensils,
+    bgClass: "bg-[#EFE0A0]/30 hover:bg-[#EFE0A0]/45 border-[#EFE0A0]/80",
+    textClass: "text-[#69571C]",
+    badgeClass: "bg-[#EFE0A0] text-ink",
+    badge: "Crispy Bites",
+  },
+  {
+    title: "Brew Bar",
     subtitle: "Espressos, Iced Lattes & Mochas",
     slug: "brew",
+    hub: "cafe",
     icon: Coffee,
     bgClass: "bg-[#AEDCEF]/20 hover:bg-[#AEDCEF]/30 border-[#AEDCEF]/50",
     textClass: "text-[#2A657D]",
@@ -47,6 +72,7 @@ const categoryTiles = [
     title: "Shakes & Smoothies",
     subtitle: "Biscoff, Nutella & Protein Blends",
     slug: "shakes-smoothies",
+    hub: "cafe",
     icon: Sparkles,
     bgClass: "bg-[#7FD8C8]/20 hover:bg-[#7FD8C8]/30 border-[#7FD8C8]/50",
     textClass: "text-[#1C695B]",
@@ -57,6 +83,7 @@ const categoryTiles = [
     title: "Mojitos & Coolers",
     subtitle: "Virgin Mojitos & Tropical Coolers",
     slug: "mojitos-coolers",
+    hub: "cafe",
     icon: GlassWater,
     bgClass: "bg-[#E4572E]/15 hover:bg-[#E4572E]/25 border-[#E4572E]/40",
     textClass: "text-[#B03714]",
@@ -64,29 +91,10 @@ const categoryTiles = [
     badge: "Refreshing",
   },
   {
-    title: "Food & Cafe Bites",
-    subtitle: "Bruschetta, Cigar Rolls & Seafood",
-    slug: "food",
-    icon: Utensils,
-    bgClass: "bg-[#EFE0A0]/30 hover:bg-[#EFE0A0]/45 border-[#EFE0A0]/80",
-    textClass: "text-[#69571C]",
-    badgeClass: "bg-[#EFE0A0] text-ink",
-    badge: "Crispy Bites",
-  },
-  {
-    title: "Royal Delight",
-    subtitle: "Kebabs, Tandoor, Curries & Biryanis",
-    slug: "royal-delight",
-    icon: Crown,
-    bgClass: "bg-[#B98B3E]/15 hover:bg-[#B98B3E]/25 border-[#B98B3E]/50",
-    textClass: "text-[#7A5A22]",
-    badgeClass: "bg-gold text-cream",
-    badge: "Chef Signature",
-  },
-  {
     title: "Handmade Desserts",
     subtitle: "Cheesecakes, Live Tiramisu & Custard",
     slug: "desserts",
+    hub: "cafe",
     icon: CakeSlice,
     bgClass: "bg-[#F6C9D6]/30 hover:bg-[#F6C9D6]/45 border-[#F6C9D6]/70",
     textClass: "text-[#8A3751]",
@@ -152,6 +160,9 @@ export default function HomePage() {
           Full-bleed cream/ink, faint mirrored swaying palm trees, Anton typography
          ========================================================================= */}
       <section className="relative overflow-hidden bg-cream pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-24 lg:pb-28 border-b border-gold/25">
+        {/* Desert/Beach ambient sandy breeze drifting gently in the background from sides */}
+        <SandyBreeze particleCount={44} className="absolute inset-0 pointer-events-none z-0 opacity-70" />
+
         {/* Subtle background gradient and patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
 
@@ -209,10 +220,10 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Anton Main Title */}
-          <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-ink tracking-tight leading-tight mb-2 sm:mb-3">
-            HOUSE OF <span className="text-gold">666</span>
-          </h1>
+          {/* Logo-Accurate Main Heading: Montserrat geometric black + authentic 666 stencil glyphs */}
+          <div className="mb-3 sm:mb-4">
+            <HouseOf666Heading size="hero" />
+          </div>
 
           {/* Cormorant Garamond Tracked Subtitle */}
           <p className="font-heading uppercase tracking-[0.25em] sm:tracking-[0.4em] text-xs sm:text-base md:text-xl text-husk font-semibold mb-4 sm:mb-6">
@@ -270,30 +281,90 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          CATEGORY TILE GRID (6 TILES)
-          Deep-linking to /menu?tab=<slug>
+          RESTRO VS CAFE DUAL PILLARS + CATEGORY TILES
+          Deep-linking to /menu?hub=<hub>&tab=<slug>
          ========================================================================= */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold mb-2">
-            Culinary Offerings
+            Two Culinary Worlds, One Destination
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink tracking-wide">
-            EXPLORE OUR CATEGORIES
+          <h2 className="font-brand font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tight uppercase">
+            RESTRO &amp; CAFE EXPERIENCES
           </h2>
           <p className="font-body text-ink/75 text-sm sm:text-base mt-2">
-            From smoky charcoal tandoors to breezy cafe coolers, pick your cravings.
+            Whether you desire a lavish Kolhapuri family feast or a slow artisan coffee, explore our menus.
           </p>
           <SectionDivider className="my-6" />
         </div>
 
+        {/* TWO GRAND EXPERIENCE CARDS: RESTRO VS CAFE */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* Card 1: The Royal Restro */}
+          <Link
+            href="/menu?hub=restro&tab=royal-delight"
+            className="group relative p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#B98B3E]/15 via-cream to-[#7A5A22]/10 border-2 border-gold/50 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-36 h-36 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
+            <div>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center text-gold border border-gold/40 shadow-sm group-hover:scale-110 transition-transform">
+                  <Crown className="w-7 h-7 text-gold" />
+                </div>
+                <span className="text-xs uppercase font-bold px-3 py-1 rounded-full bg-gold text-cream shadow-sm">
+                  Grand Resto
+                </span>
+              </div>
+              <h3 className="font-brand font-extrabold text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-gold transition-colors">
+                Royal Resto Dining
+              </h3>
+              <p className="font-body text-sm sm:text-base text-ink/80 mt-2 leading-relaxed">
+                Charcoal-roasted tandoor kebabs, slow-cooked authentic Kolhapuri mutton gravies, aromatic dum biryanis, and piping-hot butter naans for unforgettable dining.
+              </p>
+            </div>
+            <div className="pt-6 mt-6 border-t border-gold/30 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-gold">
+              <span>Explore Resto Dining Menu</span>
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
+            </div>
+          </Link>
+
+          {/* Card 2: The Artisan Cafe */}
+          <Link
+            href="/menu?hub=cafe&tab=food"
+            className="group relative p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#AEDCEF]/20 via-cream to-[#7FD8C8]/15 border-2 border-[#2A657D]/30 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-36 h-36 bg-[#AEDCEF]/20 rounded-full blur-2xl pointer-events-none" />
+            <div>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#AEDCEF]/30 flex items-center justify-center text-[#2A657D] border border-[#AEDCEF]/60 shadow-sm group-hover:scale-110 transition-transform">
+                  <Coffee className="w-7 h-7 text-[#2A657D]" />
+                </div>
+                <span className="text-xs uppercase font-bold px-3 py-1 rounded-full bg-[#2A657D] text-cream shadow-sm">
+                  Brews &amp; Bites
+                </span>
+              </div>
+              <h3 className="font-brand font-extrabold text-2xl sm:text-3xl text-ink uppercase tracking-wide group-hover:text-[#2A657D] transition-colors">
+                The Artisan Cafe
+              </h3>
+              <p className="font-body text-sm sm:text-base text-ink/80 mt-2 leading-relaxed">
+                Freshly pulled espresso brews, chilled caramel lattes, thick Biscoff shakes, coastal seafood bites, crispy cigar rolls, and decadent handmade cheesecakes.
+              </p>
+            </div>
+            <div className="pt-6 mt-6 border-t border-[#2A657D]/20 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2A657D]">
+              <span>Explore Cafe &amp; Brews Menu</span>
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
+            </div>
+          </Link>
+        </div>
+
+        {/* 6 Quick Category Tiles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoryTiles.map((tile) => {
             const Icon = tile.icon;
             return (
               <Link
                 key={tile.slug}
-                href={`/menu?tab=${tile.slug}`}
+                href={`/menu?hub=${tile.hub}&tab=${tile.slug}`}
                 className={`group relative p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover flex flex-col justify-between ${tile.bgClass}`}
               >
                 <div>

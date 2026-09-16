@@ -15,6 +15,7 @@
   --color-mocktail-navy: #2E3A59;
 
   --font-display: var(--font-anton), Impact, sans-serif;
+  --font-brand: var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: var(--font-cormorant), Georgia, serif;
   --font-body: var(--font-jost), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-accent: var(--font-caveat), cursive;
