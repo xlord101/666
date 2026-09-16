@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import { Brand666Glyphs } from "./HouseOf666Heading";
 
 interface OpeningScreenProps {
   /** Video source path in /public, defaults to /intro-video.mp4 */
@@ -285,15 +286,23 @@ export function OpeningScreen({
               </div>
             </motion.div>
 
-            {/* Anton Main Title */}
-            <motion.h1
+            {/* Brand Title: Logo-accurate Montserrat + Brand666Glyphs foil */}
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-              className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wider text-cream leading-tight mb-2 sm:mb-3 drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+              className="flex flex-col items-center justify-center text-center mb-3 sm:mb-4"
             >
-              HOUSE OF <span className="text-gold">666</span>
-            </motion.h1>
+              <span className="font-brand font-medium text-lg sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-cream uppercase select-none mb-1 sm:mb-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+                HOUSE OF
+              </span>
+              <span className="inline-flex items-center justify-center">
+                <Brand666Glyphs
+                  className="h-16 sm:h-22 md:h-28 lg:h-32 w-auto"
+                  useFoil={true}
+                />
+              </span>
+            </motion.div>
 
             {/* Cormorant Garamond Tracked Subtitle */}
             <motion.p

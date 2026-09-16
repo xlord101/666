@@ -6,6 +6,7 @@ import { siteConfig } from "@/data/site-config";
 import { SectionDivider } from "./SectionDivider";
 import { InstagramIcon } from "./Motifs";
 import { ReplayIntroButton } from "./ReplayIntroButton";
+import { Brand666Glyphs } from "./HouseOf666Heading";
 
 export function Footer() {
   return (
@@ -27,11 +28,14 @@ export function Footer() {
                   className="object-cover"
                 />
               </div>
-              <div>
-                <span className="font-brand font-bold text-xl sm:text-2xl tracking-[0.16em] text-cream block uppercase">
-                  HOUSE OF <span className="text-gold">666</span>
+              <div className="flex flex-col items-start justify-center leading-tight">
+                <span className="font-brand font-medium text-xs sm:text-sm tracking-[0.08em] text-cream uppercase select-none">
+                  HOUSE OF
                 </span>
-                <span className="font-heading uppercase tracking-[0.25em] text-[10px] text-cream/70 block">
+                <div className="my-1">
+                  <Brand666Glyphs className="h-6 sm:h-7 w-auto" useFoil={true} />
+                </div>
+                <span className="font-heading uppercase tracking-[0.25em] text-[10px] text-cream/75">
                   Resto &amp; Cafe
                 </span>
               </div>

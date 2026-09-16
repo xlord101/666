@@ -8,6 +8,7 @@ import { Menu, X, Phone, UtensilsCrossed } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { ReplayIntroButton } from "./ReplayIntroButton";
 import { InstagramIcon } from "./Motifs";
+import { Brand666Glyphs } from "./HouseOf666Heading";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -60,11 +61,14 @@ export function Navbar() {
               priority
             />
           </div>
-          <div className="flex flex-col">
-            <span className="font-brand font-extrabold text-lg sm:text-xl text-ink tracking-[0.14em] leading-none">
-              HOUSE OF <span className="text-gold">666</span>
+          <div className="flex flex-col items-start justify-center leading-tight">
+            <span className="font-brand font-medium text-[11px] sm:text-xs text-ink tracking-[0.08em] uppercase select-none">
+              HOUSE OF
             </span>
-            <span className="font-heading uppercase tracking-[0.2em] text-[10px] sm:text-xs text-husk font-medium">
+            <div className="my-0.5">
+              <Brand666Glyphs className="h-5 sm:h-6 w-auto" useFoil={true} />
+            </div>
+            <span className="font-heading uppercase tracking-[0.2em] text-[9px] sm:text-[10px] text-husk font-medium">
               Resto &amp; Cafe
             </span>
           </div>
