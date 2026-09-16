@@ -117,12 +117,6 @@ export function Navbar() {
             </a>
           )}
           <ReplayIntroButton variant="icon" />
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-cream hover:bg-bronze transition-all duration-200 shadow-gold hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-cream"
-          >
-            Reserve a Table
-          </Link>
         </div>
 
         {/* Mobile Hamburger Trigger */}
@@ -137,12 +131,6 @@ export function Navbar() {
             <InstagramIcon className="w-4 h-4" />
           </a>
           <ReplayIntroButton variant="icon" className="p-1.5" />
-          <Link
-            href="/contact"
-            className="px-3 py-1.5 text-xs font-semibold rounded-full bg-gold text-cream hover:bg-bronze transition-colors shadow-sm"
-          >
-            Reserve
-          </Link>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -166,23 +166,23 @@ export default function HomePage() {
         {/* Subtle background gradient and patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
 
-        {/* Authentic House of 666 Menu Palm Trees (Golden Foil textured framing positioned flush to edges to clear title text) */}
-        <div className="absolute -left-8 sm:-left-10 md:-left-14 lg:-left-16 xl:-left-12 2xl:-left-6 bottom-0 pointer-events-none z-0">
+        {/* Authentic House of 666 Palm Trees - Golden Highlights framing the Emblem & Hero */}
+        <div className="absolute left-[-14px] sm:left-0 md:left-4 lg:left-10 xl:left-20 2xl:left-32 top-3 sm:top-6 md:top-10 lg:top-14 pointer-events-none z-0">
           <PalmTreeSway
             variant="left"
             theme="gold"
-            className="w-24 sm:w-36 md:w-48 lg:w-56 xl:w-68 2xl:w-80 h-auto drop-shadow-lg"
-            opacity="opacity-40 sm:opacity-90 lg:opacity-95"
+            className="w-28 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-80 h-auto filter drop-shadow-[0_6px_16px_rgba(185,139,62,0.35)]"
+            opacity="opacity-90 sm:opacity-95 lg:opacity-100"
             enableSway={true}
             priority={true}
           />
         </div>
-        <div className="absolute -right-8 sm:-right-10 md:-right-14 lg:-right-16 xl:-right-12 2xl:-right-6 bottom-0 pointer-events-none z-0">
+        <div className="absolute right-[-14px] sm:right-0 md:right-4 lg:right-10 xl:right-20 2xl:right-32 top-3 sm:top-6 md:top-10 lg:top-14 pointer-events-none z-0">
           <PalmTreeSway
             variant="right"
             theme="gold"
-            className="w-24 sm:w-36 md:w-48 lg:w-56 xl:w-68 2xl:w-80 h-auto drop-shadow-lg"
-            opacity="opacity-40 sm:opacity-90 lg:opacity-95"
+            className="w-28 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-80 h-auto filter drop-shadow-[0_6px_16px_rgba(185,139,62,0.35)]"
+            opacity="opacity-90 sm:opacity-95 lg:opacity-100"
             enableSway={true}
             priority={true}
           />
@@ -226,7 +226,7 @@ export default function HomePage() {
           </div>
 
           {/* Cormorant Garamond Tracked Subtitle */}
-          <p className="font-heading uppercase tracking-[0.25em] sm:tracking-[0.4em] text-xs sm:text-base md:text-xl text-husk font-semibold mb-4 sm:mb-6">
+          <p className="font-heading uppercase tracking-[0.16em] sm:tracking-[0.3em] md:tracking-[0.4em] text-xs sm:text-base md:text-xl text-husk font-semibold mb-4 sm:mb-6 max-w-xs sm:max-w-none mx-auto">
             Resto &amp; Cafe &bull; Tarabai Park
           </p>
 
@@ -657,7 +657,7 @@ export default function HomePage() {
                 href="/contact"
                 className="flex-1 inline-flex items-center justify-center py-3 px-5 rounded-full border border-gold text-ink font-semibold text-sm hover:bg-gold/15 transition-colors"
               >
-                <span>Reserve a Table</span>
+                <span>Contact Us</span>
               </Link>
             </div>
           </div>

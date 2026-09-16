@@ -330,10 +330,6 @@ export function OpeningScreen({
                 <span className="tracking-wide uppercase">Enter Experience</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-
-              <span className="text-[10px] sm:text-[11px] text-cream/60 tracking-wider font-body">
-                Tap button or press <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-cream/80 text-[10px] font-mono">Enter</kbd> to explore
-              </span>
             </motion.div>
           </main>
         </motion.div>
