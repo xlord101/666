@@ -4,7 +4,7 @@ import Image from "next/image";
 import { MapPin, Phone, Clock, ExternalLink, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { SectionDivider } from "./SectionDivider";
-import { InstagramIcon, XIcon } from "./Motifs";
+import { InstagramIcon } from "./Motifs";
 import { ReplayIntroButton } from "./ReplayIntroButton";
 
 export function Footer() {
@@ -73,13 +73,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/location" className="hover:text-gold transition-colors inline-flex items-center gap-1.5">
-                  <span>Find Us &amp; Hours</span>
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-gold transition-colors inline-flex items-center gap-1.5">
-                  <span>Contact &amp; Directions</span>
+                  <span>Location, Hours &amp; Contact</span>
                 </Link>
               </li>
               <li>
@@ -112,12 +107,12 @@ export function Footer() {
 
               <div className="pt-1">
                 <a
-                  href={siteConfig.googleMapsUrl}
+                  href={siteConfig.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs text-gold hover:text-cream transition-colors font-medium underline underline-offset-4"
                 >
-                  <span>Open in Google Maps</span>
+                  <span>Get Directions (Open Maps App)</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -154,18 +149,6 @@ export function Footer() {
                 <InstagramIcon className="w-4 h-4 text-gold" />
                 <span>Follow {siteConfig.instagramHandle}</span>
               </a>
-
-              {siteConfig.xUrl && (
-                <a
-                  href={siteConfig.xUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/40 text-cream text-xs hover:bg-gold hover:text-ink transition-all duration-200"
-                >
-                  <XIcon className="w-3.5 h-3.5 text-gold" />
-                  <span>Follow {siteConfig.xHandle}</span>
-                </a>
-              )}
 
               <a
                 href={siteConfig.googleReviewsUrl}

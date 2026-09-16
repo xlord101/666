@@ -56,7 +56,6 @@ export function RestaurantJsonLd() {
     ],
     sameAs: [
       siteConfig.instagramUrl,
-      siteConfig.xUrl,
       siteConfig.googleMapsUrl,
     ].filter(Boolean) as string[],
   };

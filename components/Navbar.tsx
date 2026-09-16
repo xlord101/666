@@ -7,15 +7,14 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone, UtensilsCrossed } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { ReplayIntroButton } from "./ReplayIntroButton";
-import { InstagramIcon, XIcon } from "./Motifs";
+import { InstagramIcon } from "./Motifs";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Menu", href: "/menu" },
   { name: "Our Story", href: "/about" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Location & Hours", href: "/location" },
-  { name: "Contact", href: "/contact" },
+  { name: "Visit & Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -104,18 +103,6 @@ export function Navbar() {
           >
             <InstagramIcon className="w-4 h-4" />
           </a>
-          {siteConfig.xUrl && (
-            <a
-              href={siteConfig.xUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full text-ink/70 hover:text-gold hover:bg-gold/15 transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
-              aria-label="House of 666 on X"
-              title="Follow on X"
-            >
-              <XIcon className="w-4 h-4" />
-            </a>
-          )}
           <ReplayIntroButton variant="icon" />
         </div>
 
@@ -178,17 +165,6 @@ export function Navbar() {
                 <InstagramIcon className="w-4 h-4 text-gold" />
                 <span>Instagram ({siteConfig.instagramHandle})</span>
               </a>
-              {siteConfig.xUrl && (
-                <a
-                  href={siteConfig.xUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium hover:text-gold"
-                >
-                  <XIcon className="w-3.5 h-3.5 text-gold" />
-                  <span>X ({siteConfig.xHandle})</span>
-                </a>
-              )}
             </div>
             <ReplayIntroButton
               variant="pill"

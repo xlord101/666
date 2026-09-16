@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { menuCategories, MenuCategory, MenuItem } from "@/data/menu";
 import { SectionDivider } from "./SectionDivider";
-import { SandyBreeze } from "./SandyBreeze";
 
 // Map slugs to category icons
 const categoryIcons: Record<string, React.ElementType> = {
@@ -221,14 +220,6 @@ export function MenuContent() {
 
   return (
     <div className="bg-cream min-h-screen relative overflow-hidden">
-      {/* Interactive desert sandy breeze in background */}
-      <SandyBreeze
-        particleCount={75}
-        intensity="vibrant"
-        interactive={true}
-        className="absolute inset-0 pointer-events-none z-0 opacity-80"
-      />
-
       {/* =========================================================================
           PAGE HEADER
          ========================================================================= */}

@@ -26,7 +26,7 @@ export function MobileActionBar() {
 
         {/* Get Directions Button */}
         <a
-          href={siteConfig.googleMapsUrl}
+          href={siteConfig.directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-ink hover:text-gold active:bg-gold/15 transition-colors focus:outline-none focus:ring-2 focus:ring-gold"

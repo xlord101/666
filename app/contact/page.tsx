@@ -1,143 +1,282 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
-import { Phone, MessageCircle, Clock, MapPin, Compass, ArrowRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Clock,
+  ExternalLink,
+  Car,
+  Navigation,
+  ShieldCheck,
+  MessageCircle,
+} from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { SectionDivider } from "@/components/SectionDivider";
+import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
+import { CopyAddressButton } from "@/components/CopyAddressButton";
+import { InstagramIcon } from "@/components/Motifs";
 
 export const metadata: Metadata = {
-  title: "Contact & Location — House of 666 Resto & Cafe Kolhapur",
+  title: "Location, Hours & Contact — House of 666 Resto & Cafe Kolhapur",
   description:
-    "Get in touch with House of 666 Resto & Cafe in Tarabai Park, Kolhapur. Call 7083560666 or message on WhatsApp for enquiries, large parties, and directions.",
+    "Find House of 666 Resto & Cafe near R.T.O. Office in Tarabai Park, Kolhapur. Open Mon–Sat 10:00 AM – 11:00 PM, Sun 10:00 AM – 10:00 PM. Get driving directions, view map, WhatsApp reservation, and call directly.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="bg-cream min-h-screen">
-      {/* Header */}
-      <section className="bg-cream border-b border-gold/25 py-12 sm:py-16 text-center px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
-          <p className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold mb-2">
-            Warm Kolhapuri Hospitality
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink tracking-tight">
-            CONTACT &amp; VISIT US
-          </h1>
-          <p className="font-body text-ink/75 text-sm sm:text-base max-w-xl mx-auto mt-3">
-            Plan a royal family feast, a breezy cafe date, or visit us in Tarabai Park. We look forward to welcoming you!
-          </p>
-          <SectionDivider className="my-6" />
-        </div>
-      </section>
+    <>
+      <RestaurantJsonLd />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-          {/* Direct Connect & Information (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            {/* Quick Actions Card */}
-            <div className="bg-cream border border-gold/30 rounded-3xl p-6 sm:p-8 shadow-card border-t-4 border-t-gold">
-              <h2 className="font-display text-2xl text-ink tracking-wide mb-2">
-                INSTANT CONNECT
-              </h2>
-              <p className="font-body text-xs sm:text-sm text-ink/75 mb-6 leading-relaxed">
-                Connect directly with our team for questions, menu inquiries, or large group bookings:
-              </p>
+      <div className="bg-cream min-h-screen">
+        {/* Header */}
+        <section className="bg-cream border-b border-gold/25 py-12 sm:py-16 text-center px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto">
+            <p className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold mb-2">
+              Visit &amp; Connect &bull; Tarabai Park, Kolhapur
+            </p>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink tracking-tight">
+              LOCATION, HOURS &amp; CONTACT
+            </h1>
+            <p className="font-body text-ink/75 text-sm sm:text-base max-w-xl mx-auto mt-3">
+              Situated near the R.T.O. Office in Tarabai Park. Join us for a royal family feast, breezy cafe coolers, or get in touch directly.
+            </p>
+            <SectionDivider className="my-6" />
+          </div>
+        </section>
 
-              <div className="space-y-3">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+            {/* Left Column: Details & Instant Connect Cards (5 cols) */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Address Card */}
+              <div className="bg-cream border border-gold/30 rounded-3xl p-7 sm:p-8 shadow-card border-t-4 border-t-gold">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2 text-gold">
+                    <MapPin className="w-5 h-5" />
+                    <span className="font-heading uppercase tracking-widest text-xs font-bold">
+                      Our Address
+                    </span>
+                  </div>
+                  <CopyAddressButton text={siteConfig.address.full} />
+                </div>
+
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4285F4]/10 border border-[#4285F4]/30 text-xs font-medium text-[#1A73E8] mb-3">
+                  <span>Google Verified</span>
+                  <span className="text-[#FBBC04] font-bold">★★★★★ 5.0</span>
+                </div>
+
+                <h2 className="font-display text-2xl text-ink tracking-wide mb-2">
+                  House of 666 — Resto &amp; Cafe
+                </h2>
+                <p className="font-body text-ink/80 text-base leading-relaxed mb-3">
+                  Near R.T.O. Office, Tarabai Park,<br />
+                  Kolhapur, Maharashtra 416003, India
+                </p>
+                <p className="font-body text-xs text-husk/80 mb-6">
+                  Plus Code: <span className="font-semibold text-gold">{siteConfig.address.plusCode}</span>
+                </p>
+
+                {/* Direct Google Maps Navigation / App link */}
+                <a
+                  href={siteConfig.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-all duration-200 shadow-gold hover:-translate-y-0.5 active:scale-95"
+                >
+                  <Navigation className="w-4 h-4" />
+                  <span>Get Directions (Open Maps App)</span>
+                  <ExternalLink className="w-4 h-4 ml-1" />
+                </a>
+              </div>
+
+              {/* Opening Hours Schedule */}
+              <div className="bg-cream border border-gold/30 rounded-3xl p-7 sm:p-8 shadow-card border-t-4 border-t-[#1C695B]">
+                <div className="flex items-center gap-2 text-[#1C695B] mb-4">
+                  <Clock className="w-5 h-5" />
+                  <span className="font-heading uppercase tracking-widest text-xs font-bold">
+                    Opening Hours
+                  </span>
+                </div>
+
+                <h3 className="font-display text-xl text-ink tracking-wide mb-4">
+                  Daily Service Schedule
+                </h3>
+
+                <div className="divide-y divide-gold/15 text-sm font-body">
+                  <div className="py-2.5 flex items-center justify-between">
+                    <span className="text-ink font-medium">Monday – Saturday</span>
+                    <span className="text-gold font-bold">10:00 AM – 11:00 PM</span>
+                  </div>
+                  <div className="py-2.5 flex items-center justify-between">
+                    <span className="text-ink font-medium">Sunday</span>
+                    <span className="text-gold font-bold">10:00 AM – 10:00 PM</span>
+                  </div>
+                  <div className="py-2.5 flex items-center justify-between">
+                    <span className="text-ink font-medium">Resto Kitchen Lunch</span>
+                    <span className="text-ink/75">12:00 PM – 3:30 PM</span>
+                  </div>
+                  <div className="py-2.5 flex items-center justify-between">
+                    <span className="text-ink font-medium">Resto Kitchen Dinner</span>
+                    <span className="text-ink/75">7:00 PM – 11:00 PM</span>
+                  </div>
+                  <div className="py-2.5 flex items-center justify-between">
+                    <span className="text-ink font-medium">Cafe &amp; Beverages</span>
+                    <span className="text-ink/75">Continuous All Day</span>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-gold/15 flex items-center gap-2 text-xs text-husk">
+                  <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                  <span>Dine-in, curbside takeaway, family seating &amp; free Wi-Fi</span>
+                </div>
+              </div>
+
+              {/* Direct Connect & Socials Card */}
+              <div className="bg-cream border border-gold/30 rounded-3xl p-7 sm:p-8 shadow-card border-t-4 border-t-[#B03714]">
+                <div className="flex items-center gap-2 text-[#B03714] mb-3">
+                  <Phone className="w-5 h-5" />
+                  <span className="font-heading uppercase tracking-widest text-xs font-bold">
+                    Call &amp; WhatsApp
+                  </span>
+                </div>
+
+                <p className="font-body text-xs sm:text-sm text-ink/75 mb-4">
+                  Reach our team directly for table inquiries, party bookings, or takeaway orders:
+                </p>
+
+                {/* Instant WhatsApp Action */}
                 <a
                   href={siteConfig.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1EBE5D] transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95"
+                  className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1EBE5D] transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95 mb-4"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>Chat on WhatsApp</span>
+                  <span>Chat on WhatsApp (+91 {siteConfig.primaryPhone})</span>
                 </a>
 
-                <a
-                  href={`tel:${siteConfig.primaryPhone}`}
-                  className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full bg-ink text-cream font-semibold text-sm hover:bg-husk transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95"
-                >
-                  <Phone className="w-4 h-4 text-gold" />
-                  <span>Call Now (+91 {siteConfig.primaryPhone})</span>
-                </a>
+                {/* Clickable Phone Numbers */}
+                <div className="space-y-2 mb-5">
+                  {siteConfig.phones.map((phone) => (
+                    <a
+                      key={phone}
+                      href={`tel:${phone}`}
+                      className="flex items-center justify-between p-3 rounded-xl bg-cream border border-gold/30 hover:border-gold hover:bg-gold/10 transition-colors group"
+                    >
+                      <span className="font-body font-bold text-sm sm:text-base text-ink group-hover:text-gold">
+                        +91 {phone}
+                      </span>
+                      <span className="text-xs font-medium text-gold flex items-center gap-1">
+                        <span>Call Host</span>
+                        <Phone className="w-3.5 h-3.5" />
+                      </span>
+                    </a>
+                  ))}
+                </div>
 
-                <a
-                  href={siteConfig.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full border-2 border-gold text-ink font-semibold text-sm hover:bg-gold/15 transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95"
-                >
-                  <Compass className="w-4 h-4 text-gold" />
-                  <span>Get Directions on Maps</span>
-                </a>
+                {/* Instagram & Google Reviews */}
+                <div className="pt-3 border-t border-gold/20 flex flex-col gap-2">
+                  <a
+                    href={siteConfig.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-cream border border-gold/30 hover:border-gold hover:bg-gold/10 transition-colors text-ink text-sm font-medium"
+                  >
+                    <span className="flex items-center gap-2">
+                      <InstagramIcon className="w-4 h-4 text-gold" />
+                      <span>{siteConfig.instagramHandle}</span>
+                    </span>
+                    <span className="text-xs text-gold font-semibold">Follow on Instagram &rarr;</span>
+                  </a>
+
+                  <a
+                    href={siteConfig.googleReviewsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-cream border border-gold/30 hover:border-gold hover:bg-gold/10 transition-colors text-ink text-sm font-medium"
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="text-[#FBBC04]">★★★★★</span>
+                      <span>Google Reviews (5.0 Stars)</span>
+                    </span>
+                    <span className="text-xs font-bold text-gold">Write Review &rarr;</span>
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Timings & Address */}
-            <div className="bg-cream border border-gold/30 rounded-3xl p-6 sm:p-8 shadow-card">
-              <h3 className="font-display text-xl text-ink tracking-wide mb-4">
-                HOURS &amp; LOCATION
-              </h3>
-
-              <div className="space-y-4 font-body text-sm text-ink/80">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
-                  <p className="leading-relaxed">
-                    House of 666, Near R.T.O. Office, Tarabai Park, Kolhapur, Maharashtra 416003
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
+            {/* Right Column: Google Maps iFrame + Neighborhood Guide (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Google Maps iFrame Card with Direct Navigation Header */}
+              <div className="bg-cream border-2 border-gold/40 rounded-3xl overflow-hidden shadow-card">
+                <div className="p-4 sm:p-5 bg-gold/10 border-b border-gold/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div>
-                    <p className="font-semibold text-ink">Open 7 Days a Week</p>
-                    <p className="text-ink/70">11:00 AM – 11:30 PM (Continuous Service)</p>
+                    <h3 className="font-display text-lg text-ink font-bold">
+                      Interactive Location Map
+                    </h3>
+                    <p className="text-xs text-ink/75">
+                      Tarabai Park &bull; Near Regional Transport Office
+                    </p>
                   </div>
+                  <a
+                    href={siteConfig.directionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gold text-cream text-xs font-semibold hover:bg-bronze transition-colors shadow-sm"
+                  >
+                    <Navigation className="w-3.5 h-3.5" />
+                    <span>Open Navigation in Maps</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
-                  <div className="space-y-0.5">
-                    {siteConfig.phones.map((p) => (
-                      <p key={p}>
-                        <a href={`tel:${p}`} className="text-gold font-medium hover:underline">
-                          +91 {p}
-                        </a>
-                      </p>
-                    ))}
-                  </div>
+                <div className="h-[420px] sm:h-[500px] lg:h-[560px] w-full">
+                  <iframe
+                    title="Google Maps Location for House of 666, Tarabai Park, Kolhapur"
+                    src={siteConfig.googleMapsEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-gold/20">
-                <Link
-                  href="/menu"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-colors shadow-sm"
-                >
-                  <span>Explore Full 220+ Menu</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              {/* Nearby Landmarks & Parking Guide */}
+              <div className="bg-cream border border-gold/30 rounded-3xl p-7 sm:p-8 shadow-card">
+                <h3 className="font-display text-xl text-ink tracking-wide mb-3 flex items-center gap-2">
+                  <Car className="w-5 h-5 text-gold" />
+                  <span>How to Reach &amp; Parking</span>
+                </h3>
+
+                <ul className="space-y-3 font-body text-sm text-ink/80">
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                    <span>
+                      <strong>Prominent Landmark:</strong> Located directly near the Regional Transport Office (R.T.O.) in Tarabai Park, Kolhapur.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                    <span>
+                      <strong>Parking Convenience:</strong> Dedicated open parking available for both four-wheelers and two-wheelers on the broad, tree-shaded avenue.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                    <span>
+                      <strong>From Central Kolhapur:</strong> Only an 8–10 minute drive from Kolhapur Railway Station and Central Bus Stand (CBS).
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-
-          {/* Interactive Google Map (7 cols) */}
-          <div className="lg:col-span-7 h-[420px] sm:h-[500px] lg:h-full min-h-[420px] rounded-3xl overflow-hidden border-2 border-gold/40 shadow-card relative">
-            <iframe
-              title="House of 666 Location Map in Tarabai Park, Kolhapur"
-              src={siteConfig.googleMapsEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 }

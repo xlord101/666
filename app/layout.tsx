@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileActionBar } from "@/components/MobileActionBar";
+import { SandyBreeze } from "@/components/SandyBreeze";
 import { siteConfig } from "@/data/site-config";
 
 const anton = Anton({
@@ -87,12 +88,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "House of 666 — Resto & Cafe",
-    description: siteConfig.description,
-    images: ["/logo.png"],
-  },
 };
 
 export const viewport: Viewport = {
@@ -112,7 +107,14 @@ export default function RootLayout({
       lang="en"
       className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
-      <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream">
+      <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative">
+        {/* Global ambient fine desert sand drifting across all pages */}
+        <SandyBreeze
+          particleCount={220}
+          intensity="vibrant"
+          interactive={true}
+          className="fixed inset-0 pointer-events-none z-20 overflow-hidden opacity-80"
+        />
         <Navbar />
         {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
         <main className="flex-1 w-full pb-20 md:pb-0">{children}</main>

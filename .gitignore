@@ -43,3 +43,4 @@ next-env.d.ts
 # local temporary video files in root
 /*.mp4
 /WhatsApp Video*.mp4
+/scratch/

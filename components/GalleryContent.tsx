@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ArrowRight, X, Sparkles, Utensils, Coffee, Cake, Home } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { SectionDivider } from "./SectionDivider";
-import { InstagramIcon, XIcon } from "./Motifs";
+import { InstagramIcon } from "./Motifs";
 
 type GalleryCategory = "all" | "food" | "drinks" | "desserts" | "ambience";
 
@@ -365,18 +365,6 @@ export function GalleryContent() {
               <InstagramIcon className="w-4 h-4" />
               <span>Follow {siteConfig.instagramHandle}</span>
             </a>
-
-            {siteConfig.xUrl && (
-              <a
-                href={siteConfig.xUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-gold/40 text-cream font-semibold text-sm hover:bg-gold hover:text-ink transition-all duration-200"
-              >
-                <XIcon className="w-4 h-4" />
-                <span>Follow {siteConfig.xHandle} on X</span>
-              </a>
-            )}
 
             <a
               href={siteConfig.googleReviewsUrl}

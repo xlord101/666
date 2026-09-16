@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { menuCategories, signaturePicks } from "@/data/menu";
-import { PalmTreeSway, PalmTreeMenuLeft, PalmTreeMenuRight, InstagramIcon, XIcon } from "@/components/Motifs";
+import { PalmTreeSway, PalmTreeMenuLeft, PalmTreeMenuRight, InstagramIcon } from "@/components/Motifs";
 import { SectionDivider } from "@/components/SectionDivider";
 import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
 import { SignatureCarousel } from "@/components/SignatureCarousel";
@@ -26,7 +26,6 @@ import { FlavourJourneyFlow } from "@/components/FlavourJourneyFlow";
 import { OpeningScreen } from "@/components/OpeningScreen";
 import { ReplayIntroButton } from "@/components/ReplayIntroButton";
 import { HouseOf666Heading } from "@/components/HouseOf666Heading";
-import { SandyBreeze } from "@/components/SandyBreeze";
 
 export const metadata: Metadata = {
   title: "House of 666 — Resto & Cafe | Tarabai Park, Kolhapur",
@@ -160,14 +159,6 @@ export default function HomePage() {
           Full-bleed cream/ink, faint mirrored swaying palm trees, Anton typography
          ========================================================================= */}
       <section className="relative overflow-hidden bg-cream pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-24 lg:pb-28 border-b border-gold/25">
-        {/* Desert/Beach ambient sandy breeze drifting gently in the background with interactive aerodynamics & sparkles */}
-        <SandyBreeze
-          particleCount={95}
-          intensity="vibrant"
-          interactive={true}
-          className="absolute inset-0 pointer-events-none z-0 opacity-90"
-        />
-
         {/* Subtle background gradient and patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
 
@@ -460,14 +451,6 @@ export default function HomePage() {
          ========================================================================= */}
       <section className="py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-cream border border-gold/40 rounded-3xl p-8 sm:p-12 md:p-16 shadow-card relative overflow-hidden">
-          {/* Ambient coastal sand breeze */}
-          <SandyBreeze
-            particleCount={50}
-            intensity="gentle"
-            interactive={true}
-            className="absolute inset-0 pointer-events-none z-0 opacity-60"
-          />
-
           {/* Authentic Gold Corner Palm Tree from Menu Cards */}
           <div className="absolute -right-4 -bottom-6 opacity-30 pointer-events-none">
             <PalmTreeSway variant="right" theme="gold" className="w-36 sm:w-56 h-auto drop-shadow-sm" enableSway={false} />
@@ -573,18 +556,6 @@ export default function HomePage() {
               <InstagramIcon className="w-4 h-4" />
               <span>Follow @houseof_666 on Instagram</span>
             </a>
-
-            {siteConfig.xUrl && (
-              <a
-                href={siteConfig.xUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gold/50 text-cream hover:bg-gold hover:text-ink transition-all duration-200 text-sm font-semibold"
-              >
-                <XIcon className="w-4 h-4" />
-                <span>Follow {siteConfig.xHandle} on X</span>
-              </a>
-            )}
 
             <a
               href={siteConfig.googleReviewsUrl}

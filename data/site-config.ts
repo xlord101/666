@@ -18,8 +18,7 @@ export interface SiteConfig {
   whatsappUrl: string;
   instagramUrl: string;
   instagramHandle: string;
-  xUrl?: string;
-  xHandle?: string;
+  directionsUrl: string;
   googleMapsUrl: string;
   googleMapsEmbedUrl: string;
   googleRating: number;
@@ -55,9 +54,10 @@ export const siteConfig: SiteConfig = {
   whatsappUrl: "https://wa.me/917083560666?text=Hi%20House%20of%20666!%20I%20would%20like%20to%20reserve%20a%20table.",
   instagramUrl: "https://www.instagram.com/houseof_666/",
   instagramHandle: "@houseof_666",
-  xUrl: "https://x.com/houseof_666",
-  xHandle: "@houseof_666",
-  googleMapsUrl: "https://share.google/tdbWEq0pHdgfJlf2X",
+  directionsUrl:
+    "https://www.google.com/maps/dir//House+of+666,+P68R%2B58Q,+House+of+666,+Tarabai+Park,+Kolhapur,+Maharashtra+416003/@16.7122863,74.2279385,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc10152c8a4adc9:0xee82c2d5381fa4e6!2m2!1d74.2408328!2d16.7155022?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
+  googleMapsUrl:
+    "https://www.google.com/maps/dir//House+of+666,+P68R%2B58Q,+House+of+666,+Tarabai+Park,+Kolhapur,+Maharashtra+416003/@16.7122863,74.2279385,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc10152c8a4adc9:0xee82c2d5381fa4e6!2m2!1d74.2408328!2d16.7155022?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
   googleReviewsUrl: "https://share.google/tdbWEq0pHdgfJlf2X",
   googleRating: 5.0,
   googleMapsEmbedUrl:
