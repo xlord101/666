@@ -108,28 +108,28 @@ export function HouseOf666Heading({
 
   if (size === "compact") {
     return (
-      <div className={`flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 ${className}`}>
-        <span className="font-brand font-bold text-2xl sm:text-3xl md:text-4xl tracking-[0.22em] text-ink uppercase">
+      <div className={`flex flex-col items-center justify-center text-center ${className}`}>
+        <span className="font-brand font-medium text-sm sm:text-base md:text-lg tracking-[0.1em] text-ink uppercase mb-1">
           HOUSE OF
         </span>
-        <Brand666Glyphs className="h-8 sm:h-10 md:h-12 w-auto" useFoil={useFoilTexture} />
+        <Brand666Glyphs className="h-10 sm:h-14 md:h-18 w-auto" useFoil={useFoilTexture} />
         <span className="sr-only">House of 666</span>
       </div>
     );
   }
 
-  // Hero size
+  // Hero size: Exact logo composition with "HOUSE OF" centered on top and "666" directly below
   return (
     <h1
-      className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7 ${className}`}
+      className={`flex flex-col items-center justify-center text-center ${className}`}
       aria-label="House of 666"
     >
-      <span className="font-brand font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[0.22em] text-ink uppercase select-none drop-shadow-sm">
+      <span className="font-brand font-medium text-lg sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-ink uppercase select-none mb-2 sm:mb-3">
         HOUSE OF
       </span>
       <span className="inline-flex items-center justify-center">
         <Brand666Glyphs
-          className="h-14 sm:h-18 md:h-22 lg:h-26 xl:h-28 w-auto"
+          className="h-20 sm:h-28 md:h-36 lg:h-44 w-auto"
           useFoil={useFoilTexture}
         />
       </span>
