@@ -85,7 +85,7 @@ export function OpeningScreen({
 
   // Ambient luxury canvas animation (fallback when video is loading or before user adds intro-video.mp4)
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || (videoLoaded && !videoError)) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -226,7 +226,6 @@ export function OpeningScreen({
              ================================================================= */}
           <header className="relative z-20 w-full px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
               <span className="font-heading uppercase tracking-[0.25em] text-[10px] sm:text-xs text-cream/80 font-semibold">
                 House of 666 &bull; Tarabai Park
               </span>
