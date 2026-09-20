@@ -222,7 +222,7 @@ export function OpeningScreen({
           <div className="absolute inset-4 sm:inset-6 z-10 pointer-events-none border border-gold/25 rounded-3xl" />
 
           {/* =================================================================
-              3. TOP BAR (BRAND WATERMARK, AUDIO TOGGLE & SKIP BUTTON)
+              3. TOP BAR (BRAND WATERMARK & AUDIO TOGGLE)
              ================================================================= */}
           <header className="relative z-20 w-full px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
@@ -248,16 +248,6 @@ export function OpeningScreen({
                 ) : (
                   <Volume2 className="w-4 h-4 text-gold animate-pulse" />
                 )}
-              </button>
-
-              {/* Skip Button */}
-              <button
-                type="button"
-                onClick={handleDismiss}
-                className="group inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-cream/10 hover:bg-gold hover:text-cream text-cream border border-gold/40 backdrop-blur-md text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
-              >
-                <span>Skip Intro</span>
-                <span className="text-gold group-hover:text-cream group-hover:translate-x-0.5 transition-transform">&rarr;</span>
               </button>
             </div>
           </header>
