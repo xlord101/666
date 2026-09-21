@@ -7,7 +7,6 @@ import {
   Volume2,
   VolumeX,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { Brand666Glyphs } from "./HouseOf666Heading";
 
@@ -222,15 +221,9 @@ export function OpeningScreen({
           <div className="absolute inset-4 sm:inset-6 z-10 pointer-events-none border border-gold/25 rounded-3xl" />
 
           {/* =================================================================
-              3. TOP BAR (BRAND WATERMARK & AUDIO TOGGLE)
+              3. TOP BAR (AUDIO TOGGLE)
              ================================================================= */}
-          <header className="relative z-20 w-full px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="font-heading uppercase tracking-[0.25em] text-[10px] sm:text-xs text-cream/80 font-semibold">
-                House of 666 &bull; Tarabai Park
-              </span>
-            </div>
-
+          <header className="relative z-20 w-full px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-end">
             <div className="flex items-center gap-2.5 sm:gap-3">
               {/* Discrete Sound Toggle */}
               <button
@@ -280,7 +273,7 @@ export function OpeningScreen({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-              className="flex flex-col items-center justify-center text-center mb-3 sm:mb-4"
+              className="flex flex-col items-center justify-center text-center mb-4 sm:mb-6"
             >
               <span className="font-brand font-medium text-lg sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-cream uppercase select-none mb-1 sm:mb-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
                 HOUSE OF
@@ -293,22 +286,12 @@ export function OpeningScreen({
               </span>
             </motion.div>
 
-            {/* Cormorant Garamond Tracked Subtitle */}
+            {/* Editorial Luxury Quote: Cormorant Garamond italic */}
             <motion.p
               initial={{ y: 15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
-              className="font-heading uppercase tracking-[0.3em] sm:tracking-[0.45em] text-[11px] sm:text-sm md:text-base text-gold font-bold mb-3 sm:mb-4"
-            >
-              RESTO &bull; CAFE &bull; TARABAI PARK
-            </motion.p>
-
-            {/* Caveat Handwritten Accent */}
-            <motion.p
-              initial={{ y: 15, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
-              className="font-accent text-cream/95 text-base sm:text-xl md:text-2xl italic max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed drop-shadow-md px-2"
+              transition={{ delay: 0.45, duration: 0.7, ease: "easeOut" }}
+              className="font-heading italic font-normal text-cream/90 text-lg sm:text-2xl md:text-3xl tracking-wide max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] px-4"
             >
               &ldquo;Where Royal Kolhapuri Heritage Meets Seaside Cafe Vibes&rdquo;
             </motion.p>
@@ -325,7 +308,6 @@ export function OpeningScreen({
                 onClick={handleDismiss}
                 className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gold text-cream font-semibold text-sm sm:text-base hover:bg-bronze transition-all duration-300 shadow-[0_0_35px_rgba(185,139,62,0.5)] hover:shadow-[0_0_50px_rgba(185,139,62,0.8)] hover:scale-105 active:scale-95 cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-cream/90 group-hover:rotate-12 transition-transform" />
                 <span className="tracking-wide uppercase">Enter Experience</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>

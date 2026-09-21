@@ -296,7 +296,7 @@ export function MenuContent() {
               >
                 {displayedCategories.map((cat) => (
                   <option key={cat.id} value={cat.id}>
-                    {cat.id === "royal-delight" ? "👑 Royal Resto Dining" : `☕ ${cat.name}`} (
+                    {cat.id === "royal-delight" ? "Royal Resto Dining" : cat.name} (
                     {cat.subSections.reduce((a, s) => a + s.items.length, 0)} items)
                   </option>
                 ))}
@@ -465,8 +465,8 @@ export function MenuContent() {
                 <div>
                   <span className="text-[11px] uppercase font-bold tracking-widest text-gold block mb-1">
                     {RESTRO_CATEGORY_IDS.has(currentCategory.id)
-                      ? "🍽️ Royal Resto Dining"
-                      : "☕ Artisan Cafe Special"}
+                      ? "Royal Resto Dining"
+                      : "Artisan Cafe Special"}
                   </span>
                   <h2 className="font-display text-3xl sm:text-4xl text-ink tracking-wide">
                     {currentCategory.id === "royal-delight"

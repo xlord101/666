@@ -24,7 +24,6 @@ import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
 import { SignatureCarousel } from "@/components/SignatureCarousel";
 import { FlavourJourneyFlow } from "@/components/FlavourJourneyFlow";
 import { OpeningScreen } from "@/components/OpeningScreen";
-import { ReplayIntroButton } from "@/components/ReplayIntroButton";
 import { HouseOf666Heading } from "@/components/HouseOf666Heading";
 
 export const metadata: Metadata = {
@@ -250,8 +249,6 @@ export default function HomePage() {
               <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
               <span>Get Directions</span>
             </a>
-
-            <ReplayIntroButton className="w-full sm:w-auto" />
           </div>
 
           {/* Quick Micro-Highlight */}
@@ -288,9 +285,6 @@ export default function HomePage() {
           <h2 className="font-brand font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tight uppercase">
             RESTRO &amp; CAFE EXPERIENCES
           </h2>
-          <p className="font-body text-ink/75 text-sm sm:text-base mt-2">
-            Whether you desire a lavish Kolhapuri family feast or a slow artisan coffee, explore our menus.
-          </p>
           <SectionDivider className="my-6" />
         </div>
 
@@ -482,10 +476,10 @@ export default function HomePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/gallery"
+                href="/menu"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-gold/60 text-ink font-medium text-sm hover:bg-gold/10 transition-colors"
               >
-                <span>View Ambience &amp; Food</span>
+                <span>Explore The Menu</span>
               </Link>
             </div>
           </div>

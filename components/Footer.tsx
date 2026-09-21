@@ -5,7 +5,6 @@ import { MapPin, Phone, Clock, ExternalLink, MessageCircle } from "lucide-react"
 import { siteConfig } from "@/data/site-config";
 import { SectionDivider } from "./SectionDivider";
 import { InstagramIcon } from "./Motifs";
-import { ReplayIntroButton } from "./ReplayIntroButton";
 import { Brand666Glyphs } from "./HouseOf666Heading";
 
 export function Footer() {
@@ -72,17 +71,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-gold transition-colors inline-flex items-center gap-1.5">
-                  <span>Photo &amp; Food Gallery</span>
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-gold transition-colors inline-flex items-center gap-1.5">
                   <span>Location, Hours &amp; Contact</span>
                 </Link>
-              </li>
-              <li>
-                <ReplayIntroButton variant="text" />
               </li>
             </ul>
           </div>
