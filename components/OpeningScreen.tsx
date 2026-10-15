@@ -7,7 +7,9 @@ import {
   Volume2,
   VolumeX,
   ArrowRight,
+  ExternalLink,
 } from "lucide-react";
+import { siteConfig } from "@/data/site-config";
 import { Brand666Glyphs } from "./HouseOf666Heading";
 
 interface OpeningScreenProps {
@@ -296,21 +298,39 @@ export function OpeningScreen({
               &ldquo;Where Royal Kolhapuri Heritage Meets Seaside Cafe Vibes&rdquo;
             </motion.p>
 
-            {/* Primary ENTER EXPERIENCE Button */}
+            {/* Action Buttons: Enter Experience & Write a Google Review */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col items-center gap-2.5 w-full max-w-xs sm:max-w-none"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-sm sm:max-w-none"
             >
               <button
                 type="button"
                 onClick={handleDismiss}
-                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gold text-cream font-semibold text-sm sm:text-base hover:bg-bronze transition-all duration-300 shadow-[0_0_35px_rgba(185,139,62,0.5)] hover:shadow-[0_0_50px_rgba(185,139,62,0.8)] hover:scale-105 active:scale-95 cursor-pointer"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gold text-cream font-semibold text-sm sm:text-base hover:bg-bronze transition-all duration-300 shadow-[0_0_35px_rgba(185,139,62,0.5)] hover:shadow-[0_0_50px_rgba(185,139,62,0.8)] hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <span className="tracking-wide uppercase">Enter Experience</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+
+              <a
+                href={siteConfig.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  // Seamless transition: when user taps to review on Google,
+                  // dismiss intro screen so this tab reveals the homepage right away!
+                  setTimeout(() => handleDismiss(), 400);
+                }}
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-cream/15 hover:bg-cream text-cream hover:text-ink font-semibold text-sm sm:text-base border border-gold/60 hover:border-gold backdrop-blur-md transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.35)] hover:shadow-[0_0_35px_rgba(251,188,4,0.45)] hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <div className="flex items-center gap-0.5 text-[#FBBC04]">
+                  {"★".repeat(5)}
+                </div>
+                <span className="tracking-wide">Write a Review</span>
+                <ExternalLink className="w-3.5 h-3.5 text-gold group-hover:text-ink transition-colors ml-0.5" />
+              </a>
             </motion.div>
           </main>
         </motion.div>

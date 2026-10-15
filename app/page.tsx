@@ -201,7 +201,7 @@ export default function HomePage() {
           {/* Google Verified 5.0 Rating Badge */}
           <div className="mb-4">
             <a
-              href={siteConfig.googleMapsUrl}
+              href={siteConfig.googleReviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream/90 border border-gold/40 text-xs font-semibold text-ink shadow-sm hover:border-gold hover:bg-gold/15 transition-all hover:scale-105"

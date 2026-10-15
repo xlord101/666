@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SandyBreeze } from "@/components/SandyBreeze";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { siteConfig } from "@/data/site-config";
 
 const anton = Anton({
@@ -108,6 +109,8 @@ export default function RootLayout({
       className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
       <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative">
+        {/* Lenis luxury smooth momentum scrolling */}
+        <SmoothScroll />
         {/* Global ambient desert sand grains & tactile grain finish in the background (z-0) */}
         <SandyBreeze
           particleCount={360}

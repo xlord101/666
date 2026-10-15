@@ -58,7 +58,8 @@ export const siteConfig: SiteConfig = {
     "https://www.google.com/maps/dir//House+of+666,+P68R%2B58Q,+House+of+666,+Tarabai+Park,+Kolhapur,+Maharashtra+416003/@16.7122863,74.2279385,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc10152c8a4adc9:0xee82c2d5381fa4e6!2m2!1d74.2408328!2d16.7155022?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
   googleMapsUrl:
     "https://www.google.com/maps/dir//House+of+666,+P68R%2B58Q,+House+of+666,+Tarabai+Park,+Kolhapur,+Maharashtra+416003/@16.7122863,74.2279385,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc10152c8a4adc9:0xee82c2d5381fa4e6!2m2!1d74.2408328!2d16.7155022?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
-  googleReviewsUrl: "https://share.google/tdbWEq0pHdgfJlf2X",
+  googleReviewsUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJya2kyFIBwTsR5qQfONXCgu4",
   googleRating: 5.0,
   googleMapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.5794557999714!2d74.2372439751493!3d16.70295878407421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1001a1c900693%3A0xe54d245037d2f95b!2sRegional%20Transport%20Office%2C%20Kolhapur!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
