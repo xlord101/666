@@ -124,8 +124,9 @@ export default function RootLayout({
           {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
           <main className="flex-1 w-full pb-20 md:pb-0">{children}</main>
           <Footer />
-          <MobileActionBar />
         </div>
+        {/* Mobile Action Bar placed directly under body for rock-solid fixed positioning in in-app webviews */}
+        <MobileActionBar />
       </body>
     </html>
   );

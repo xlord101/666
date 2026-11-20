@@ -15,6 +15,7 @@ import {
   Phone,
   ChevronRight,
   Compass,
+  CookingPot,
 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { menuCategories, signaturePicks } from "@/data/menu";
@@ -25,14 +26,26 @@ import { SignatureCarousel } from "@/components/SignatureCarousel";
 import { FlavourJourneyFlow } from "@/components/FlavourJourneyFlow";
 import { OpeningScreen } from "@/components/OpeningScreen";
 import { HouseOf666Heading } from "@/components/HouseOf666Heading";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "House of 666 — Resto & Cafe | Tarabai Park, Kolhapur",
   description: siteConfig.description,
 };
 
-// 6 Category Tiles configuration putting Resto Dining first
+// Category Tiles configuration putting Kolhapuri Thalis & Resto Dining first
 const categoryTiles = [
+  {
+    title: "Kolhapuri Thalis",
+    subtitle: "Mutton & Chicken Thalis, Rassa & Sides",
+    slug: "thalis",
+    hub: "restro",
+    icon: CookingPot,
+    bgClass: "bg-[#B98B3E]/15 hover:bg-[#B98B3E]/25 border-[#B98B3E]/50",
+    textClass: "text-[#7A5A22]",
+    badgeClass: "bg-gold text-cream",
+    badge: "Special Thalis",
+  },
   {
     title: "Royal Resto Dining",
     subtitle: "Kebabs, Tandoor, Curries & Biryanis",
@@ -255,7 +268,7 @@ export default function HomePage() {
           <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-6 lg:gap-10 text-[11px] sm:text-sm text-husk/80 font-medium">
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
-              Authentic Kolhapuri Recipes
+              Authentic Kolhapuri Thalis &amp; Rassa
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/30 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gold" />
@@ -289,10 +302,10 @@ export default function HomePage() {
         </div>
 
         {/* TWO GRAND EXPERIENCE CARDS: RESTRO VS CAFE */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 relative z-10">
+        <ScrollReveal className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 relative z-10">
           {/* Card 1: The Royal Restro */}
           <Link
-            href="/menu?hub=restro&tab=royal-delight"
+            href="/menu?hub=restro&tab=thalis"
             className="group relative p-8 sm:p-10 rounded-3xl bg-cream border-2 border-gold/50 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#B98B3E]/20 via-transparent to-[#7A5A22]/15 pointer-events-none" />
@@ -310,11 +323,11 @@ export default function HomePage() {
                 Royal Resto Dining
               </h3>
               <p className="font-body text-sm sm:text-base text-ink/80 mt-2 leading-relaxed">
-                Charcoal-roasted tandoor kebabs, slow-cooked authentic Kolhapuri mutton gravies, aromatic dum biryanis, and piping-hot butter naans for unforgettable dining.
+                Authentic Kolhapuri Mutton &amp; Chicken Thalis with fiery Tambada-Pandhara Rassa, charcoal-roasted kebabs, rich gravies, and aromatic dum biryanis.
               </p>
             </div>
             <div className="relative z-10 pt-6 mt-6 border-t border-gold/30 flex items-center justify-between text-xs sm:text-sm font-bold uppercase tracking-wider text-gold">
-              <span>Explore Resto Dining Menu</span>
+              <span>Explore Thalis &amp; Resto Dining</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
@@ -347,10 +360,10 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
-        </div>
+        </ScrollReveal>
 
-        {/* 6 Quick Category Tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+        {/* Quick Category Tiles */}
+        <ScrollReveal delay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           {categoryTiles.map((tile) => {
             const Icon = tile.icon;
             return (
@@ -387,7 +400,7 @@ export default function HomePage() {
               </Link>
             );
           })}
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* =========================================================================
@@ -417,7 +430,9 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <SignatureCarousel items={signaturePicks} />
+          <ScrollReveal>
+            <SignatureCarousel items={signaturePicks} />
+          </ScrollReveal>
         </div>
       </section>
 
@@ -439,7 +454,9 @@ export default function HomePage() {
           <SectionDivider className="my-6" />
         </div>
 
-        <FlavourJourneyFlow />
+        <ScrollReveal>
+          <FlavourJourneyFlow />
+        </ScrollReveal>
       </section>
 
       {/* =========================================================================
@@ -447,43 +464,45 @@ export default function HomePage() {
           Connecting Kolhapur royalty with coastal cafe soul
          ========================================================================= */}
       <section className="py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-cream border border-gold/40 rounded-3xl p-8 sm:p-12 md:p-16 shadow-card relative overflow-hidden">
-          {/* Authentic Gold Corner Palm Tree from Menu Cards */}
-          <div className="absolute -right-4 -bottom-6 opacity-30 pointer-events-none">
-            <PalmTreeSway variant="right" theme="gold" className="w-36 sm:w-56 h-auto drop-shadow-sm" enableSway={false} />
-          </div>
+        <ScrollReveal>
+          <div className="bg-cream border border-gold/40 rounded-3xl p-8 sm:p-12 md:p-16 shadow-card relative overflow-hidden">
+            {/* Authentic Gold Corner Palm Tree from Menu Cards */}
+            <div className="absolute -right-4 -bottom-6 opacity-30 pointer-events-none">
+              <PalmTreeSway variant="right" theme="gold" className="w-36 sm:w-56 h-auto drop-shadow-sm" enableSway={false} />
+            </div>
 
-          <div className="max-w-3xl">
-            <span className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold block mb-3">
-              The Heritage Behind House of 666
-            </span>
-            <h2 className="font-display text-3xl sm:text-5xl text-ink tracking-wide leading-tight mb-6">
-              WHERE ROYAL FLAVOURS MEET A COASTAL CAFE SOUL
-            </h2>
-            <p className="font-body text-ink/80 text-base sm:text-lg leading-relaxed mb-6">
-              Born in the heart of Tarabai Park, House of 666 is an homage to Kolhapur’s legendary hospitality. We believe grand food doesn’t have to feel stiff, and chilled cafe afternoons deserve dishes prepared with royal precision.
-            </p>
-            <p className="font-body text-ink/75 text-sm sm:text-base leading-relaxed mb-8">
-              Whether you crave a fiery Kolhapuri Mutton Ghee Roast slow-cooked over burning coals, or a handcrafted Lotus Biscoff cheesecake with fresh iced espresso, every recipe is prepared by masters of their craft.
-            </p>
+            <div className="max-w-3xl">
+              <span className="font-heading uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold text-gold block mb-3">
+                The Heritage Behind House of 666
+              </span>
+              <h2 className="font-display text-3xl sm:text-5xl text-ink tracking-wide leading-tight mb-6">
+                WHERE ROYAL FLAVOURS MEET A COASTAL CAFE SOUL
+              </h2>
+              <p className="font-body text-ink/80 text-base sm:text-lg leading-relaxed mb-6">
+                Born in the heart of Tarabai Park, House of 666 is an homage to Kolhapur’s legendary hospitality. We believe grand food doesn’t have to feel stiff, and chilled cafe afternoons deserve dishes prepared with royal precision.
+              </p>
+              <p className="font-body text-ink/75 text-sm sm:text-base leading-relaxed mb-8">
+                Whether you crave a fiery Kolhapuri Mutton Ghee Roast slow-cooked over burning coals, or a handcrafted Lotus Biscoff cheesecake with fresh iced espresso, every recipe is prepared by masters of their craft.
+              </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-colors shadow-gold hover:-translate-y-0.5"
-              >
-                <span>Read Our Full Story</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/menu"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-gold/60 text-ink font-medium text-sm hover:bg-gold/10 transition-colors"
-              >
-                <span>Explore The Menu</span>
-              </Link>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold text-cream font-semibold text-sm hover:bg-bronze transition-colors shadow-gold hover:-translate-y-0.5"
+                >
+                  <span>Read Our Full Story</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/menu"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-gold/60 text-ink font-medium text-sm hover:bg-gold/10 transition-colors"
+                >
+                  <span>Explore The Menu</span>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* =========================================================================
@@ -491,7 +510,7 @@ export default function HomePage() {
           6-image grid linking out to @houseof_666
          ========================================================================= */}
       <section className="py-16 sm:py-24 bg-ink text-cream border-t-2 border-gold/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <p className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold mb-2">
               Follow Our Daily Feasts
@@ -564,7 +583,7 @@ export default function HomePage() {
               <span>5.0 on Google Maps</span>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* =========================================================================
@@ -572,7 +591,7 @@ export default function HomePage() {
           Embedded Google Maps + address summary
          ========================================================================= */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Details Card */}
           <div className="lg:col-span-5 bg-cream border border-gold/30 rounded-3xl p-8 sm:p-10 shadow-card">
             <span className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold block mb-2">
@@ -657,7 +676,7 @@ export default function HomePage() {
               className="w-full h-full grayscale-[15%] contrast-[105%]"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

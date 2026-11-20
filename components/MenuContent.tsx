@@ -18,12 +18,14 @@ import {
   CakeSlice,
   Filter,
   Check,
+  CookingPot,
 } from "lucide-react";
 import { menuCategories, MenuCategory, MenuItem } from "@/data/menu";
 import { SectionDivider } from "./SectionDivider";
 
 // Map slugs to category icons
 const categoryIcons: Record<string, React.ElementType> = {
+  thalis: CookingPot,
   "royal-delight": Crown,
   food: Utensils,
   brew: Coffee,
@@ -35,6 +37,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 
 // Logical display order putting Resto Dining Feast FIRST
 const CATEGORY_ORDER = [
+  "thalis",
   "royal-delight",
   "food",
   "brew",
@@ -44,7 +47,7 @@ const CATEGORY_ORDER = [
   "mocktails",
 ];
 
-const RESTRO_CATEGORY_IDS = new Set(["royal-delight"]);
+const RESTRO_CATEGORY_IDS = new Set(["thalis", "royal-delight"]);
 const CAFE_CATEGORY_IDS = new Set([
   "food",
   "brew",
@@ -90,13 +93,15 @@ export function MenuContent() {
       const match = sortedCategories.find((c) => c.slug === tabParam || c.id === tabParam);
       if (match) return match.id;
     }
-    return "royal-delight"; // Default directly to Resto Dining
+    return "thalis"; // Default directly to Kolhapuri Thalis
   }, [tabParam, sortedCategories]);
 
   const [activeTab, setActiveTab] = useState<string>(initialCategory);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>({
+    "special-thalis": true,
+    "extra-items-sides": true,
     "tandoor-starters": true,
     "indian-main-nonveg": true,
     "indian-main-veg": true,
@@ -141,11 +146,11 @@ export function MenuContent() {
   const handleHubChange = (newHub: MenuHub) => {
     setMenuHub(newHub);
     if (newHub === "restro") {
-      setActiveTab("royal-delight");
-      router.push(`/menu?hub=restro&tab=royal-delight`, { scroll: false });
+      setActiveTab("thalis");
+      router.push(`/menu?hub=restro&tab=thalis`, { scroll: false });
     } else if (newHub === "cafe") {
       // If currently on restro, switch to first cafe category (food or brew)
-      if (activeTab === "royal-delight") {
+      if (RESTRO_CATEGORY_IDS.has(activeTab)) {
         setActiveTab("food");
         router.push(`/menu?hub=cafe&tab=food`, { scroll: false });
       } else {
@@ -296,7 +301,11 @@ export function MenuContent() {
               >
                 {displayedCategories.map((cat) => (
                   <option key={cat.id} value={cat.id}>
-                    {cat.id === "royal-delight" ? "Royal Resto Dining" : cat.name} (
+                    {cat.id === "thalis"
+                      ? "Kolhapuri Thalis"
+                      : cat.id === "royal-delight"
+                      ? "Royal Resto Dining"
+                      : cat.name} (
                     {cat.subSections.reduce((a, s) => a + s.items.length, 0)} items)
                   </option>
                 ))}
@@ -469,7 +478,9 @@ export function MenuContent() {
                       : "Artisan Cafe Special"}
                   </span>
                   <h2 className="font-display text-3xl sm:text-4xl text-ink tracking-wide">
-                    {currentCategory.id === "royal-delight"
+                    {currentCategory.id === "thalis"
+                      ? "Authentic Kolhapuri Thalis"
+                      : currentCategory.id === "royal-delight"
                       ? "Royal Resto Dining & Feasts"
                       : currentCategory.name}
                   </h2>
@@ -509,16 +520,17 @@ export function MenuContent() {
 
             {/* ===================================================================
                 RENDER SUB-SECTIONS
-                Royal Delight = Course Cards with Anchor IDs
+                Royal Delight & Thalis = Course Cards with Anchor IDs
                =================================================================== */}
             <div className="space-y-8">
               {filteredSubSections.map((subSection) => {
                 if (subSection.items.length === 0) return null;
 
-                const isRoyalDelight = currentCategory.id === "royal-delight";
+                const isAccordionCategory =
+                  currentCategory.id === "royal-delight" || currentCategory.id === "thalis";
                 const isOpen = openAccordions[subSection.id] ?? true;
 
-                if (isRoyalDelight) {
+                if (isAccordionCategory) {
                   return (
                     <div
                       key={subSection.id}
