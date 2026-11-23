@@ -10,7 +10,7 @@ export function MobileActionBar() {
     <aside
       aria-label="Quick mobile actions"
       data-lenis-prevent="true"
-      className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-cream/95 backdrop-blur-md border-t border-gold/30 shadow-[0_-4px_20px_rgba(26,23,16,0.12)] px-3 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] transform-gpu translate-z-0 backface-hidden will-change-transform touch-manipulation"
+      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-cream/95 backdrop-blur-md border-t border-gold/30 shadow-[0_-4px_20px_rgba(26,23,16,0.12)] px-3 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] transform-gpu translate-z-0 backface-hidden will-change-transform touch-manipulation"
       style={{
         transform: "translate3d(0, 0, 0)",
         WebkitTransform: "translate3d(0, 0, 0)",

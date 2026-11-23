@@ -185,7 +185,7 @@ export default function HomePage() {
             priority={true}
           />
         </div>
-        <div className="absolute right-[-14px] sm:right-0 md:right-4 lg:right-10 xl:right-20 2xl:right-32 top-3 sm:top-6 md:top-10 lg:top-14 pointer-events-none z-0">
+        <div className="absolute right-0 sm:right-0 md:right-4 lg:right-10 xl:right-20 2xl:right-32 top-3 sm:top-6 md:top-10 lg:top-14 pointer-events-none z-0 overflow-hidden">
           <PalmTreeSway
             variant="right"
             theme="gold"
@@ -290,7 +290,7 @@ export default function HomePage() {
           RESTRO VS CAFE DUAL PILLARS + CATEGORY TILES
           Deep-linking to /menu?hub=<hub>&tab=<slug>
          ========================================================================= */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold mb-2">
             Two Culinary Worlds, One Destination
@@ -440,7 +440,7 @@ export default function HomePage() {
           CHEF'S CULINARY TASTING JOURNEY
           Curated course progressions & flavor pairings
          ========================================================================= */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="font-heading uppercase tracking-widest text-xs sm:text-sm font-semibold text-gold mb-2">
             Curated Tasting Sequences
@@ -590,7 +590,7 @@ export default function HomePage() {
           LOCATION & HOURS SUMMARY BLOCK
           Embedded Google Maps + address summary
          ========================================================================= */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Details Card */}
           <div className="lg:col-span-5 bg-cream border border-gold/30 rounded-3xl p-8 sm:p-10 shadow-card">

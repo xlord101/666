@@ -178,7 +178,7 @@ export function OpeningScreen({
             filter: "blur(12px)",
             transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
           }}
-          className="fixed inset-0 z-50 overflow-hidden bg-black flex flex-col justify-between select-none"
+          className="fixed inset-0 z-[100] overflow-hidden bg-black flex flex-col justify-between select-none"
         >
           {/* =================================================================
               1. BACKGROUND VIDEO (OR ATMOSPHERIC CANVAS FALLBACK)

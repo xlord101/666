@@ -28,7 +28,7 @@ export function ScrollReveal({
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={className}
+      className={`w-full max-w-full ${className}`}
     >
       {children}
     </motion.div>

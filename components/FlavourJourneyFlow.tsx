@@ -251,9 +251,9 @@ export function FlavourJourneyFlow() {
   const currentJourney = culinaryJourneys[selectedKey];
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-full overflow-hidden">
       {/* Journey Selector Tabs with Liquid Pill Indicator */}
-      <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 overflow-x-auto no-scrollbar py-2 px-1 -mx-2 sm:mx-0">
+      <div className="w-full max-w-full flex items-center justify-start sm:justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 overflow-x-auto no-scrollbar py-2 px-1">
         {(Object.keys(culinaryJourneys) as Array<"royal" | "coastal" | "sweet">).map((key) => {
           const j = culinaryJourneys[key];
           const Icon = j.icon;

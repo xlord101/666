@@ -34,6 +34,8 @@ html {
   scroll-behavior: smooth;
   background-color: #F5EFDD;
   color: #1A1710;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 html.lenis,

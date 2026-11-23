@@ -108,7 +108,7 @@ export default function RootLayout({
       lang="en"
       className={`${anton.variable} ${montserrat.variable} ${cormorant.variable} ${jost.variable} ${caveat.variable}`}
     >
-      <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative">
+      <body className="bg-cream text-ink font-body antialiased min-h-screen flex flex-col selection:bg-gold selection:text-cream relative w-full max-w-full overflow-x-hidden">
         {/* Lenis luxury smooth momentum scrolling */}
         <SmoothScroll />
         {/* Global ambient desert sand grains & tactile grain finish in the background (z-0) */}
@@ -119,10 +119,10 @@ export default function RootLayout({
           className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
         />
         {/* Foreground Content Stack (z-10) so cards and text are strictly in front of background sand */}
-        <div className="relative z-10 flex flex-col min-h-screen">
+        <div className="relative z-10 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
           <Navbar />
           {/* pb-20 on mobile ensures fixed bottom action bar never obscures content */}
-          <main className="flex-1 w-full pb-20 md:pb-0">{children}</main>
+          <main className="flex-1 w-full max-w-full overflow-x-hidden pb-20 md:pb-0">{children}</main>
           <Footer />
         </div>
         {/* Mobile Action Bar placed directly under body for rock-solid fixed positioning in in-app webviews */}
